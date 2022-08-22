@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fsivosWVk9LLuAmF1mh4HPCBYXtib3j0tzhpT18ZZhP5wNUCvtcb4vgNEGl6DnZG+oHpBRzB40nlSK+6mZtIpg==",
+  "success": true,
+  "projectFilePath": "C:\\C3Proyecto\\GrupoTorneo.App\\GrupoTorneo.App.Servicios\\GrupoTorneo.App.Servicios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\ProjectSupport\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
