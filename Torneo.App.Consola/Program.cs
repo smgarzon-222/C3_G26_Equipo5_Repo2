@@ -7,6 +7,7 @@ namespace Torneo.App.Consola
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         private static IRepositorioDT _repoDT = new RepositorioDT();
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
+        private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
 
         static void Main(string[] args)
         {
@@ -19,6 +20,8 @@ namespace Torneo.App.Consola
                 Console.WriteLine("4. Mostrar municipios");
                 Console.WriteLine("5. Mostrar DTs");
                 Console.WriteLine("6. Mostrar Equipos");
+                Console.WriteLine("7. Insertar Posicion");
+                Console.WriteLine("8. Mostrar Posiciones");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("Seleccione una opcion");
                 opcion = Int32.Parse(Console.ReadLine());
@@ -41,6 +44,12 @@ namespace Torneo.App.Consola
                         break;
                     case 6:
                         GetAllEquipos();
+                        break;
+                    case 7:
+                        AddPosicion();
+                        break;
+                    case 8:
+                        GetAllPosiciones();
                         break;
                 }
             } while (opcion != 0);
@@ -114,6 +123,26 @@ namespace Torneo.App.Consola
                  + equipo.Municipio.Nombre + " " + equipo.DirectorTecnico.Nombre);
             }
         }
+
+        private static void AddPosicion()
+        {
+            Console.WriteLine("Ingrese el nombre de la Posicion");
+            string nombre = Console.ReadLine();
+            var posicion = new Posicion
+            {
+                Nombre = nombre,
+            };
+            _repoPosicion.AddPosicion(posicion);
+           
+        }
+        private static void GetAllPosiciones()
+        {
+            foreach (var posicion in _repoPosicion.GetAllPosiciones())
+            {
+                Console.WriteLine(posicion.Id + " " + posicion.Nombre);
+            }
+        }
+
     }
 }
 
