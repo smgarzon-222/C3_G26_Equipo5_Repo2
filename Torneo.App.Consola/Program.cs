@@ -191,7 +191,7 @@ namespace Torneo.App.Consola
 
          private static void AddPartido()
         {
-            Console.WriteLine("Ingrese fecha y hora del Partido");
+            Console.WriteLine("Ingrese fecha y hora del Partido formato dd/mm/aaaa hh:mm");
             DateTime fecha = DateTime.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese el equipo Local");
             int idLocal = Int32.Parse(Console.ReadLine());
