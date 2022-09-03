@@ -8,6 +8,7 @@ namespace Torneo.App.Consola
         private static IRepositorioDT _repoDT = new RepositorioDT();
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
         private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
+        private static IRepositorioJugador _repoJugador = new RepositorioJugador();
 
         static void Main(string[] args)
         {
@@ -22,6 +23,8 @@ namespace Torneo.App.Consola
                 Console.WriteLine("6. Mostrar Equipos");
                 Console.WriteLine("7. Insertar Posicion");
                 Console.WriteLine("8. Mostrar Posiciones");
+                Console.WriteLine("9. Insertar Jugador");
+                Console.WriteLine("10. Mostrar Jugadores");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("Seleccione una opcion");
                 opcion = Int32.Parse(Console.ReadLine());
@@ -50,6 +53,12 @@ namespace Torneo.App.Consola
                         break;
                     case 8:
                         GetAllPosiciones();
+                        break;
+                    case 9:
+                        AddJugador();
+                        break;
+                    case 10:
+                        GetAllJugadores();
                         break;
                 }
             } while (opcion != 0);
@@ -142,6 +151,35 @@ namespace Torneo.App.Consola
                 Console.WriteLine(posicion.Id + " " + posicion.Nombre);
             }
         }
+
+         private static void AddJugador()
+        {
+            Console.WriteLine("Ingrese el nombre del Jugador");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese el numero del Jugador");
+            int numero = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el id del equipo");
+            int idEquipo = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el id de la posicion");
+            int idPosicion = Int32.Parse(Console.ReadLine());
+
+            var jugador = new Jugador
+            {
+                Nombre = nombre,
+                Numero = numero,
+            };
+            _repoJugador.AddJugador(jugador, idEquipo, idPosicion);
+        }
+
+        private static void GetAllJugadores()
+        {
+            foreach (var jugador in _repoJugador.GetAllJugadores())
+            {
+                Console.WriteLine(jugador.Id + " " + jugador.Nombre + " " + jugador.Numero +" "
+                 + jugador.Equipo.Nombre + " " + jugador.Posicion.Nombre);
+            }
+        }
+
 
     }
 }
