@@ -2,13 +2,16 @@
 @model Torneo.App.Frontend.Pages.DTs.IndexModel
 @{
 }
-<h1>Listado de Directores Tecnicos</h1>
-<table class="table table-dark table-hover">
+<h1>
+  LISTADO 
+  <small class="text-muted">Directores Tecnicos</small>
+<table class="table table-sm table-dark table-hover">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">DOCUMENTO</th>
+            <th scope="col">TELEFONO</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +20,8 @@
             <tr>
                 <th scope="row">@dt.Id</th>
                 <td>@dt.Nombre</td>
+                <td>@dt.Documento</td>
+                <td>@dt.Telefono</td>
             </tr>
         }
         
